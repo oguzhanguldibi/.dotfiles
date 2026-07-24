@@ -1,15 +1,8 @@
 # Dotfiles
 
-## Setup
+Portable settings for macOS and Linux/WSL.
 
 ```sh
 git clone git@github.com:oguzhanguldibi/.dotfiles.git ~/.dotfiles
 bash ~/.dotfiles/setup.sh
-```
-
-## Node.js
-
-```sh
-nvm install 24
-nvm use 24
 ```
