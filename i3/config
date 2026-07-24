@@ -197,7 +197,6 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+bracketleft exec playerctl previous
 
 # Volume controls
-bindsym $mod+F6 exec ~/.config/i3/scripts/playerctl-mute-toggle.sh
 bindsym $mod+F8 exec playerctl volume 0.05+
 bindsym $mod+F7 exec playerctl volume 0.05-
 
