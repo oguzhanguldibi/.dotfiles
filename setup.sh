@@ -2,7 +2,6 @@
 
 set -euo pipefail
 
-readonly NVM_VERSION="v0.40.4"
 readonly DOTFILES_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 readonly CODEX_SOURCE="${DOTFILES_DIR}/codex/config.toml"
 readonly CODEX_DIR="${HOME}/.codex"
@@ -41,22 +40,20 @@ install_nvm() {
   profile="$(shell_profile)"
   touch "${profile}"
 
-  if [[ ! -s "${DOTFILES_NVM_DIR}/nvm.sh" ]]; then
-    local installer
-    installer="$(mktemp)"
+  local installer
+  installer="$(mktemp)"
 
-    curl -fsSL \
-      "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_VERSION}/install.sh" \
-      -o "${installer}" || {
-        rm -f "${installer}"
-        return 1
-      }
-    PROFILE="${profile}" NVM_DIR="${DOTFILES_NVM_DIR}" bash "${installer}" || {
-      rm -f "${installer}"
-      return 1
-    }
+  curl -fsSL \
+    "https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh" \
+    -o "${installer}" || {
     rm -f "${installer}"
-  fi
+    return 1
+  }
+  PROFILE="${profile}" NVM_DIR="${DOTFILES_NVM_DIR}" bash "${installer}" || {
+    rm -f "${installer}"
+    return 1
+  }
+  rm -f "${installer}"
 
   export NVM_DIR="${DOTFILES_NVM_DIR}"
   # shellcheck source=/dev/null
