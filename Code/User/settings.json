@@ -1,113 +1,27 @@
 {
-    // wb
-    "workbench.colorTheme": "Tokyo Night",
-    "workbench.startupEditor": "none",
-    "workbench.sideBar.location": "right",
-    "workbench.editor.editorActionsLocation": "hidden",
-    "workbench.editor.decorations.colors": false,
-    "workbench.editor.enablePreview": false,
-  
-    // editor
-    "editor.fontSize": 48,
-    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace",
-    "editor.cursorBlinking": "solid",
-    "editor.cursorStyle": "block",
-    "editor.minimap.enabled": false,
-  
-    "editor.lineNumbers": "relative",
-    "editor.stickyScroll.enabled": false,
-    "editor.scrollbar.horizontal": "hidden",
-    "editor.scrollbar.vertical": "hidden",
-  
-    "editor.detectIndentation": false,
-    "editor.rulers": [
-      {
-        "color": "#0099AA33",
-        "column": 80
-      }
-    ],
-    "editor.quickSuggestionsDelay": 1,
-    "editor.screenReaderAnnounceInlineSuggestion": false,
-    "editor.find.addExtraSpaceOnTop": false,
-    "editor.minimap.renderCharacters": false,
-    "editor.renderWhitespace": "none",
-    "editor.formatOnSave": false,
-    "editor.renderControlCharacters": false,
-  
-    // explorer
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false,
-    "explorer.compactFolders": false,
-  
-    // window
-    "window.autoDetectHighContrast": false,
-    "window.enableMenuBarMnemonics": false,
-    "window.commandCenter": false,
-  
-    // vscode
-    "update.showReleaseNotes": false,
-    "telemetry.telemetryLevel": "off",
-    "security.workspace.trust.banner": "never",
-    "security.workspace.trust.startupPrompt": "never",
-  
-    "diffEditor.diffAlgorithm": "legacy",
-    "files.trimFinalNewlines": true,
-  
-    // git
-    "git.confirmSync": false,
-    "git.openRepositoryInParentFolders": "never",
-  
-    // terminal
-    "terminal.integrated.gpuAcceleration": "off",
-    "terminal.integrated.customGlyphs": false,
-  
-    // extension
-    "extensions.ignoreRecommendations": true,
-    "npm.fetchOnlinePackageInfo": false,
-    "search.searchOnType": false,
-    "vim.enableNeovim": true,
-    "vim.neovimUseConfigFile": true,
-    "vim.neovimConfigPath": "/home/oguzhan/.config/nvim/init.lua",
-    "vim.neovimPath": "/usr/bin/nvim",
-    "extensions.experimental.affinity": {
-      "asvetliakov.vscode-neovim": 1
-    },
-    "vscode-neovim.completionDelay": 0,
-    "vscode-neovim.neovimInitVimPaths.linux": "/home/oguzhan/.config/nvim/init.lua",
-    "vscode-neovim.mouseSelectionDebounceTime": 0,
-    "yaml.format.singleQuote": true,
-    "terminal.integrated.sendKeybindingsToShell": true,
-    "security.workspace.trust.enabled": false,
-    "remote.SSH.remotePlatform": {
-      "oguzhan": "linux"
-    },
-    "zenMode.hideLineNumbers": false,
-    "notebook.lineNumbers": "on",
-    "workbench.layoutControl.enabled": false,
-    "files.trimTrailingWhitespaceInRegexAndStrings": false,
-    "go.lintTool": "golangci-lint",
-    "go.enableCodeLens": {
-      "runtest": false
-    },
-    "go.showWelcome": false,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "[json]": {
-      "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "go.formatTool": "goimports",
-    "[go]": {
-      "editor.formatOnSave": true,
-      "editor.codeActionsOnSave": {
-        "source.organizeImports": "always"
-      }
-    },
-    "[go.mod]": {
-      "editor.formatOnSave": true,
-      "editor.codeActionsOnSave": {
-        "source.organizeImports": "always"
-      }
-    },
-    "go.toolsManagement.autoUpdate": true,
-    "go.vetOnSave": "package"
-  }
-  
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.startupEditor": "none",
+  "workbench.sideBar.location": "right",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "workbench.editor.decorations.colors": false,
+  "workbench.editor.enablePreview": false,
+  "workbench.layoutControl.enabled": false,
+  "window.commandCenter": false,
+  "editor.fontFamily": "Geist Mono, monospace",
+  "editor.fontSize": 48,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle": "block",
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.rulers": [
+    {
+      "column": 80,
+      "color": "#0099AA33"
+    }
+  ],
+  "explorer.compactFolders": false,
+  "telemetry.telemetryLevel": "off"
+}
