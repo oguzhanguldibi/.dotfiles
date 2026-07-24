@@ -22,6 +22,7 @@
       "color": "#0099AA33"
     }
   ],
+  "files.insertFinalNewline": true,
   "explorer.compactFolders": false,
   "telemetry.telemetryLevel": "off"
 }
