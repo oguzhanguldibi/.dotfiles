@@ -1,0 +1,58 @@
+theme = TokyoNight
+
+font-family = Geist Mono
+font-size = 12
+
+mouse-hide-while-typing = true
+cursor-style-blink = false
+cursor-style = block
+
+window-theme = ghostty
+window-decoration = none
+gtk-titlebar = false
+gtk-titlebar-style = native
+window-save-state = always
+
+unfocused-split-opacity = 0.90
+unfocused-split-fill = #033503
+split-divider-color = #FF4F01
+
+maximize = true
+window-vsync = true
+
+# Accepted by Ghostty but currently only acted on by the macOS updater.
+auto-update-channel = tip
+scrollback-limit = 1000000
+
+font-feature = -liga
+font-feature = -calt
+
+freetype-load-flags = no-hinting
+
+# macOS-style shortcuts using Alt as Command on Windows.
+keybind = alt+t=new_tab
+keybind = alt+w=close_surface
+keybind = alt+d=new_split:right
+keybind = alt+shift+d=new_split:down
+keybind = alt+[=goto_split:previous
+keybind = alt+]=goto_split:next
+keybind = alt+shift+[=previous_tab
+keybind = alt+shift+]=next_tab
+keybind = alt+,=open_config
+keybind = alt+shift+,=reload_config
+keybind = alt+backspace=text:\x15
+
+# macOS-style Command font controls.
+keybind = ctrl+==unbind
+keybind = ctrl++=unbind
+keybind = ctrl+-=unbind
+keybind = ctrl+0=unbind
+keybind = alt+==increase_font_size:1
+keybind = alt++=increase_font_size:1
+keybind = alt+-=decrease_font_size:1
+keybind = alt+0=reset_font_size
+
+# macOS-style Option shortcuts using the Windows/Super key.
+keybind = super+backspace=esc:\x7f
+# WSLg does not forward the Super shortcut; this is the Windows remap target.
+keybind = ctrl+alt+backspace=esc:\x7f

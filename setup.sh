@@ -5,6 +5,7 @@ set -euo pipefail
 readonly DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly DOTFILES_HOME="${DOTFILES_HOME:-${HOME}}"
 readonly CODEX_SOURCE="${DOTFILES_DIR}/codex/config.toml"
+readonly GHOSTTY_SOURCE="${DOTFILES_DIR}/ghostty/config"
 readonly TMUX_SOURCE="${DOTFILES_DIR}/tmux/tmux.conf"
 readonly VSCODE_SOURCE="${DOTFILES_DIR}/vscode/settings.json"
 readonly NVM_INSTALL_URL="https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh"
@@ -65,6 +66,21 @@ vscode_target() {
   esac
 }
 
+ghostty_target() {
+  case "${DOTFILES_PLATFORM:-$(uname -s)}" in
+    Darwin)
+      printf '%s\n' "${DOTFILES_HOME}/Library/Application Support/com.mitchellh.ghostty/config"
+      ;;
+    Linux)
+      printf '%s\n' "${XDG_CONFIG_HOME:-${DOTFILES_HOME}/.config}/ghostty/config"
+      ;;
+    *)
+      printf 'Unsupported platform. Use macOS or Linux/WSL.\n' >&2
+      return 1
+      ;;
+  esac
+}
+
 install_codex() {
   install_file \
     "Codex config" \
@@ -81,6 +97,12 @@ install_vscode() {
   local target
   target="$(vscode_target)" || return
   install_file "VS Code settings" "${VSCODE_SOURCE}" "${target}" 644
+}
+
+install_ghostty() {
+  local target
+  target="$(ghostty_target)" || return
+  install_file "Ghostty config" "${GHOSTTY_SOURCE}" "${target}" 644
 }
 
 shell_profile() {
@@ -140,6 +162,7 @@ install_nvm() {
 
 install_configs() {
   install_codex
+  install_ghostty
   install_tmux
   install_vscode
 }
@@ -161,11 +184,14 @@ case "${1:-all}" in
   --vscode-only)
     install_vscode
     ;;
+  --ghostty-only)
+    install_ghostty
+    ;;
   --nvm-only)
     install_nvm
     ;;
   *)
-    printf 'Usage: %s [--configs-only|--codex-only|--tmux-only|--vscode-only|--nvm-only]\n' "$0" >&2
+    printf 'Usage: %s [--configs-only|--codex-only|--ghostty-only|--tmux-only|--vscode-only|--nvm-only]\n' "$0" >&2
     exit 2
     ;;
 esac

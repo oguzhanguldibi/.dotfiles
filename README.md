@@ -1,6 +1,6 @@
 # Dotfiles
 
-Portable settings for macOS and Linux/WSL.
+Portable Codex, Ghostty, tmux, and VS Code settings for macOS and Linux/WSL.
 
 ```sh
 git clone git@github.com:oguzhanguldibi/.dotfiles.git ~/.dotfiles
