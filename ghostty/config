@@ -41,6 +41,12 @@ keybind = alt+shift+]=next_tab
 keybind = alt+,=open_config
 keybind = alt+shift+,=reload_config
 keybind = alt+backspace=text:\x15
+keybind = alt+c=copy_to_clipboard
+keybind = alt+v=paste_from_clipboard
+keybind = alt+a=select_all
+keybind = alt+k=clear_screen
+keybind = alt+f=start_search
+keybind = alt+n=new_window
 
 # macOS-style Command font controls.
 keybind = ctrl+==unbind
@@ -54,5 +60,7 @@ keybind = alt+0=reset_font_size
 
 # macOS-style Option shortcuts using the Windows/Super key.
 keybind = super+backspace=esc:\x7f
-# WSLg does not forward the Super shortcut; this is the Windows remap target.
+# WSLg drops the Super key; mac-keys.ahk on Windows sends Option as ctrl+alt.
 keybind = ctrl+alt+backspace=esc:\x7f
+keybind = ctrl+alt+left=esc:b
+keybind = ctrl+alt+right=esc:f
