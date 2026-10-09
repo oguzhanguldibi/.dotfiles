@@ -12,10 +12,6 @@ GroupAdd "Term", "ahk_class ConsoleWindowClass"
 ; WSLg windows (Ghostty). Ghostty handles Cmd (Alt) itself; see ~/.config/ghostty/config.
 ; shortcut: matches every WSLg app, add per-app rules if you run other Linux GUI apps.
 GroupAdd "WSLg", "ahk_exe msrdc.exe"
-GroupAdd "Browser", "ahk_exe chrome.exe"
-GroupAdd "Browser", "ahk_exe msedge.exe"
-GroupAdd "Browser", "ahk_exe firefox.exe"
-GroupAdd "Browser", "ahk_exe brave.exe"
 
 SendKeys(keys, *) => Send(keys)
 
@@ -69,7 +65,7 @@ HotIf
 !+]::Send "^{PgDn}"
 #HotIf
 
-#HotIf WinActive("ahk_group Browser")
+#HotIf WinActive("ahk_exe chrome.exe")
 ![::Send "!{Left}"
 !]::Send "!{Right}"
 #HotIf
